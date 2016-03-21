@@ -314,7 +314,7 @@ function addNewCircleData(){
 	for(var cid in circles){
 		circle = circles[cid];
 		if(!(circle in circle_data)){
-			circle_data[circle] = 'animal:mammals:dogs:dog.png:Dachschund:General household regions' + randint(1,56)+'_plant:flowers:panda.png:Birch Tree:Ireland<br>and other areas!' + randint(1,4)+'';
+			circle_data[circle] = 'animal:mammals:dogs:static/dog.png:Dachschund:General household regions' + randint(1,56)+'_plant:flowers:static/panda.png:Birch Tree:Ireland<br>and other areas!' + randint(1,4)+'';
 			if(circle_data[circle].slice(-1) == '~'){
 				circle_data[circle] = circle_data[circle].slice(0,circle_data[circle].length-1);
 				showLoading = false;
@@ -370,9 +370,9 @@ function convertAnimalToHtml(){
 		var image_ = aninfo[3];
 		var name = aninfo[4];
 		var locations = aninfo[5];
-		animal_html += '		<div class="scrolldiv_el_img" style="content:url(\''+'static/'+image_+'\')" ></div>\n';
-		animal_html += '		<div class="scrolldiv_el_w"><div class="scrolldiv_el_title">'+'static/'+name+'</div>\n';
-		animal_html += '		<div class="scrolldiv_el_loctext">'+'static/'+locations+'</div></div>\n'
+		animal_html += '		<div class="scrolldiv_el_img" style="content:url(\''+image_+'\')" ></div>\n';
+		animal_html += '		<div class="scrolldiv_el_w"><div class="scrolldiv_el_title">'+''+name+'</div>\n';
+		animal_html += '		<div class="scrolldiv_el_loctext">'+locations+'</div></div>\n'
 		animal_html += '	</div>\n\n';
 	}
 	animal_html += '</div>\n\n';
@@ -388,9 +388,9 @@ function convertPlantToHtml(){
 		var image_ = pinfo[2];
 		var name = pinfo[3];
 		var locations = pinfo[4];
-		plant_html += '		<div class="scrolldiv_el_img" style="content:url(\''+'static/' + image_+'\')" ></div>\n';
-		plant_html += '		<div class="scrolldiv_el_w"><div class="scrolldiv_el_title">'+'static/'+name+'</div>\n';
-		plant_html += '		<div class="scrolldiv_el_loctext">'+'static/'+locations+'</div></div>\n'
+		plant_html += '		<div class="scrolldiv_el_img" style="content:url(\'' + image_+'\')" ></div>\n';
+		plant_html += '		<div class="scrolldiv_el_w"><div class="scrolldiv_el_title">'+name+'</div>\n';
+		plant_html += '		<div class="scrolldiv_el_loctext">'+locations+'</div></div>\n'
 		plant_html += '	</div>\n\n';
 	}
 	plant_html += '</div>\n\n';
