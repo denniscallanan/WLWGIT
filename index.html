@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <link href="static/main.css" type = "text/css" rel="stylesheet"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="static/main.js"> </script>
+    <script src="static/design.js"> </script>
+    <script src="static/checkbox.js"> </script>
+    
+  </head>
+
+  <body>
+
+    <div id="nav" class="noselect">
+      <div id="nav_search" class="clickable" onclick="alert('Map search coming soon!');"></div>
+      <div class="nav_el clickable" onclick="alert('Create your selection!');">FIND</div>
+      <div class="nav_el clickable" onclick="alert('History is not yet implemented!');">HISTORY</div>
+      <div class="nav_el clickable" onclick="alert('Game coming soon!');">GAME</div>
+    </div>
+
+    <div id="map" class="noselect">
+      <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjr7K4az1dKyT5PP9pVXPteuNzMqSuWOM
+        &libraries=visualization&callback=initMap">
+      </script>
+    </div>
+
+    <div id="map_buttons" class="noselect">
+      <div class="map_button clickable" onclick="clearCircles();">Clear Selection</div>
+      <div class="map_button clickable" onclick="resetCamera();">Reset Camera</div>
+      <div class="map_button clickable" onclick="share();" style="backgroundcolor:#6495ed;">Share Results</div>
+    </div>
+	
+	<div id="info">
+	</div>
+
+    <div id="menu" class="noselect">
+      
+      <div id="search">
+
+        <div class="searchpiece">
+          <div class="searchpiece_title">Animals</div>
+          <input type="text" placeholder="FILTER" class="searchpiece_input">
+        </div>
+        <div class="searchbutton clickable" onclick="search();"> </div>
+        <div class="searchpiece">
+          <div class="searchpiece_title">Plants</div>
+          <input type="text" placeholder="FILTER" class="searchpiece_input">
+        </div>
+
+      </div>
+
+      <div id="tools">
+
+        <div class="tool">
+          <div class="tool_cb tool_cb_checked" id="usemap"> </div>
+          <div class="tool_cb_lbl"> USE MAP </div>
+        </div>
+
+        <div class="tool">
+    	  <div class="tool_cb" id="invert"> </div>
+    	  <div class="tool_cb_lbl"> INVERT CIRCLES </div>
+        </div>
+
+        <div class="right_tool">
+          <div class="tool_btn clickable" onclick='clearSearch();'> Clear Search </div>
+        </div>
+
+      </div>
+
+    </div>
+    
+    <div id="wrapper">
+
+      <div class="scrolldiv">
+
+        <div class="scrolldiv_el clickable">
+          <div class="scrolldiv_el_img" style="content:url('static/tiger.png')" ></div>
+          <div class="scrolldiv_el_w"><div class="scrolldiv_el_title">Siberian Tiger</div>
+          <div class="scrolldiv_el_loctext">Sikhote Alin mountain region, Primorye Province<br>This is some test text becaise I need ta do this to check if the css is completely working correctly!</div></div>
+        </div>
+
+        <div class="scrolldiv_el clickable">
+          <div class="scrolldiv_el_img" style="content:url('static/dog.png')" ></div>
+          <div class="scrolldiv_el_w"><div class="scrolldiv_el_title">Dachschund</div>
+          <div class="scrolldiv_el_loctext">General household regions, Ireland and America</div></div>
+        </div>
+
+        <div class="scrolldiv_el clickable">
+          <div class="scrolldiv_el_img" style="content:url('static/monkey.gif')" ></div>
+          <div class="scrolldiv_el_w"><div class="scrolldiv_el_title">Capuchin Monkey</div>
+          <div class="scrolldiv_el_loctext">Brazil and, other parts of Latin America</div></div>
+        </div>
+
+        <div class="scrolldiv_el clickable">
+          <div class="scrolldiv_el_img" style="content:url('static/panda.png')" ></div>
+          <div class="scrolldiv_el_w"><div class="scrolldiv_el_title">Giant Panda</div>
+          <div class="scrolldiv_el_loctext">South Central China, Shananxi and Ghazu</div></div>
+        </div>
+
+        <div class="scrolldiv_el clickable">
+          <div class="scrolldiv_el_img" style="content:url('static/panda.png')" ></div>
+          <div class="scrolldiv_el_w"><div class="scrolldiv_el_title">Giant Panda</div>
+          <div class="scrolldiv_el_loctext">South Central China, Shananxi and Ghazu</div></div>
+        </div>
+
+        <div class="scrolldiv_el clickable">
+          <div class="scrolldiv_el_img" style="content:url('static/panda.png')" ></div>
+          <div class="scrolldiv_el_w"><div class="scrolldiv_el_title">Giant Panda</div>
+          <div class="scrolldiv_el_loctext">South Central China, Shananxi and Ghazu</div></div>
+        </div>
+
+        <div class="scrolldiv_el clickable">
+          <div class="scrolldiv_el_img" style="content:url('static/panda.png')" ></div>
+          <div class="scrolldiv_el_w"><div class="scrolldiv_el_title">Giant Panda</div>
+          <div class="scrolldiv_el_loctext">South Central China, Shananxi and Ghazu</div></div>
+        </div>
+
+        <div class="scrolldiv_el clickable">
+          <div class="scrolldiv_el_img" style="content:url('static/panda.png')" ></div>
+          <div class="scrolldiv_el_w"><div class="scrolldiv_el_title">Giant Panda</div>
+          <div class="scrolldiv_el_loctext">South Central China, Shananxi and Ghazu</div></div>
+        </div>
+
+        <div class="scrolldiv_el clickable">
+          <div class="scrolldiv_el_img" style="content:url('static/panda.png')" ></div>
+          <div class="scrolldiv_el_w"><div class="scrolldiv_el_title">Giant Panda</div>
+          <div class="scrolldiv_el_loctext">South Central China, Shananxi and Ghazu</div></div>
+        </div>
+
+        <div class="scrolldiv_el clickable">
+          <div class="scrolldiv_el_img" style="content:url('static/panda.png')" ></div>
+          <div class="scrolldiv_el_w"><div class="scrolldiv_el_title">Giant Panda</div>
+          <div class="scrolldiv_el_loctext">South Central China, Shananxi and Ghazu</div></div>
+        </div>
+
+        <div class="scrolldiv_el clickable">
+          <div class="scrolldiv_el_img" style="content:url('static/panda.png')" ></div>
+          <div class="scrolldiv_el_w"><div class="scrolldiv_el_title">Giant Panda</div>
+          <div class="scrolldiv_el_loctext">South Central China, Shananxi and Ghazu</div></div>
+        </div>
+
+        <div class="scrolldiv_el clickable">
+          <div class="scrolldiv_el_img" style="content:url('static/panda.png')" ></div>
+          <div class="scrolldiv_el_w"><div class="scrolldiv_el_title">Giant Panda</div>
+          <div class="scrolldiv_el_loctext">South Central China, Shananxi and Ghazu</div></div>
+        </div>
+
+        <div class="scrolldiv_el clickable">
+          <div class="scrolldiv_el_img" style="content:url('static/panda.png')" ></div>
+          <div class="scrolldiv_el_w"><div class="scrolldiv_el_title">Giant Panda</div>
+          <div class="scrolldiv_el_loctext">South Central China, Shananxi and Ghazu</div></div>
+        </div>
+
+      </div>
+
+      <div class="scrolldiv">
+
+        <div class="scrolldiv_el clickable">
+          <div class="scrolldiv_el_img" style="content:url('static/tiger.png')" ></div>
+          <div class="scrolldiv_el_w"><div class="scrolldiv_el_title">Dandalion</div>
+          <div class="scrolldiv_el_loctext">Sikhote Alin mountain region, Primorye Province</div></div>
+        </div>
+
+        <div class="scrolldiv_el clickable">
+          <div class="scrolldiv_el_img" style="content:url('static/dog.png')" ></div>
+          <div class="scrolldiv_el_w"><div class="scrolldiv_el_title">Leaf</div>
+          <div class="scrolldiv_el_loctext">General household regions, Ireland and America</div></div>
+        </div>
+
+        <div class="scrolldiv_el clickable">
+          <div class="scrolldiv_el_img" style="content:url('static/monkey.gif')" ></div>
+          <div class="scrolldiv_el_w"><div class="scrolldiv_el_title">Birch Tree</div>
+          <div class="scrolldiv_el_loctext">Brazil and, other parts of Latin America</div></div>
+        </div>
+
+        <div class="scrolldiv_el clickable">
+          <div class="scrolldiv_el_img" style="content:url('static/panda.png')" ></div>
+          <div class="scrolldiv_el_w"><div class="scrolldiv_el_title">Sunflowers</div>
+          <div class="scrolldiv_el_loctext">South Central China, Shananxi and Ghazu</div></div>
+        </div>
+
+        <div class="scrolldiv_el clickable">
+          <div class="scrolldiv_el_img" style="content:url('static/panda.png')" ></div>
+          <div class="scrolldiv_el_w"><div class="scrolldiv_el_title">Red Poppy-roses</div>
+          <div class="scrolldiv_el_loctext">South Central China, Shananxi and Ghazu</div></div>
+        </div>
+
+        <div class="scrolldiv_el clickable">
+          <div class="scrolldiv_el_img" style="content:url('static/tiger.png')" ></div>
+          <div class="scrolldiv_el_w"><div class="scrolldiv_el_title">Dandalion</div>
+          <div class="scrolldiv_el_loctext">Sikhote Alin mountain region, Primorye Province</div></div>
+        </div>
+
+        <div class="scrolldiv_el clickable">
+          <div class="scrolldiv_el_img" style="content:url('static/dog.png')" ></div>
+          <div class="scrolldiv_el_w"><div class="scrolldiv_el_title">Leaf</div>
+          <div class="scrolldiv_el_loctext">General household regions, Ireland and America</div></div>
+        </div>
+
+        <div class="scrolldiv_el clickable">
+          <div class="scrolldiv_el_img" style="content:url('static/monkey.gif')" ></div>
+          <div class="scrolldiv_el_w"><div class="scrolldiv_el_title">Birch Tree</div>
+          <div class="scrolldiv_el_loctext">Brazil and, other parts of Latin America</div></div>
+        </div>
+
+        <div class="scrolldiv_el clickable">
+          <div class="scrolldiv_el_img" style="content:url('static/panda.png')" ></div>
+          <div class="scrolldiv_el_w"><div class="scrolldiv_el_title">Sunflowers</div>
+          <div class="scrolldiv_el_loctext">South Central China, Shananxi and Ghazu</div></div>
+        </div>
+
+        <div class="scrolldiv_el clickable">
+          <div class="scrolldiv_el_img" style="content:url('static/panda.png')" ></div>
+          <div class="scrolldiv_el_w"><div class="scrolldiv_el_title">Red Poppy-roses</div>
+          <div class="scrolldiv_el_loctext">South Central China, Shananxi and Ghazu</div></div>
+        </div>
+
+        <div class="scrolldiv_el clickable">
+          <div class="scrolldiv_el_img" style="content:url('static/tiger.png')" ></div>
+          <div class="scrolldiv_el_w"><div class="scrolldiv_el_title">Dandalion</div>
+          <div class="scrolldiv_el_loctext">Sikhote Alin mountain region, Primorye Province</div></div>
+        </div>
+
+        <div class="scrolldiv_el clickable">
+          <div class="scrolldiv_el_img" style="content:url('static/dog.png')" ></div>
+          <div class="scrolldiv_el_w"><div class="scrolldiv_el_title">Leaf</div>
+          <div class="scrolldiv_el_loctext">General household regions, Ireland and America</div></div>
+        </div>
+
+        <div class="scrolldiv_el clickable">
+          <div class="scrolldiv_el_img" style="content:url('static/monkey.gif')" ></div>
+          <div class="scrolldiv_el_w"><div class="scrolldiv_el_title">Birch Tree</div>
+          <div class="scrolldiv_el_loctext">Brazil and, other parts of Latin America</div></div>
+        </div>
+
+        <div class="scrolldiv_el clickable">
+          <div class="scrolldiv_el_img" style="content:url('static/panda.png')" ></div>
+          <div class="scrolldiv_el_w"><div class="scrolldiv_el_title">Sunflowers</div>
+          <div class="scrolldiv_el_loctext">South Central China, Shananxi and Ghazu</div></div>
+        </div>
+
+        <div class="scrolldiv_el clickable">
+          <div class="scrolldiv_el_img" style="content:url('static/panda.png')" ></div>
+          <div class="scrolldiv_el_w"><div class="scrolldiv_el_title">Red Poppy-roses</div>
+          <div class="scrolldiv_el_loctext">South Central China, Shananxi and Ghazu</div></div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div id="black"></div>
+
+    <div id="tips">
+
+    	Hold <b>right click</b> to create a new circle or make a previous one larger<br><br>
+    	Hold <b>shift</b> and <b>right click</b> to make a circle smaller<br><br>
+    	Circles can be removed by clicking <b>Clear selection</b> at the top of the screen <u>or</u> making a circle smaller until it disappears
+
+    </div>
+
+    <div id="share">
+    	<div id="share_top">
+    		<div id="share_back" class="clickable noselect" onclick="cancelShare();">Cancel</div>
+    		<div id="share_share" class="noselect">Share Menu</div>
+    	</div><br><br>
+    	Share this url to your friends and family!<br><br>
+    	<input id="share_inp" disabled='disabled' type="text" class="share_inp"><br>
+    </div>
+
+    <div id="share_black"></div>
+	
+	<div id="loading" style="content:url('static/images/bar.gif')"></div>
+
+    
+  </body>
+
+</html>
