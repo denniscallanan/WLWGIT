@@ -196,15 +196,19 @@ body{
 
 .scrolldiv{
 
-	overflow-y:auto;
+	overflow:hidden;
 	height: 194px;
 	width: 320px;
 	float:left;
 
 	margin-top:10px;
 
-	transition: height 2s;
+	transition: height 0.7s;
 
+}
+
+.scrolldiv:hover{
+	overflow-y:auto;
 }
 
 #wrapper:hover .scrolldiv, #menu:hover + #wrapper .scrolldiv{
