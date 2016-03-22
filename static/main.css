@@ -11,8 +11,7 @@
 	-khtml-user-select: none;    /* Konqueror */
 	-moz-user-select: none;      /* Firefox */
 	-ms-user-select: none;       /* IE/Edge */
-	user-select: none;           /* non-prefixed version, currently
-	not supported by any browser */
+	user-select: none;           /* standard code */
 }
 
 html, body { 
@@ -197,7 +196,7 @@ body{
 
 .scrolldiv{
 
-	overflow-y:scroll;
+	overflow-y:auto;
 	height: 294px;
 	width: 320px;
 	float:left;
