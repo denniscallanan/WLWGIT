@@ -173,12 +173,11 @@ function clearCircles(){
     areas[x].circles[0].setMap(null);
   }
   areas.length = 0;
+  circles.length = 0;
   
   info('Selection has been cleared!');
   
-  createBaseCircleData();
-  makeHtml();
-  hideDataIfNeeded();
+  performRequest();
   
 }
 
@@ -222,6 +221,8 @@ function clearSearch(){
 function showLoadingIfNeeded(){
   if(showLoading == true){
 	$("#loading").css('display','block');
+  } else{
+	$("#loading").css('display','none');
   }
 }
 
@@ -311,13 +312,13 @@ function clearUselessCircleData(){
 }
 
 function addNewCircleData(){
+	showLoading = false;
 	for(var cid in circles){
 		circle = circles[cid];
 		if(!(circle in circle_data)){
 			circle_data[circle] = 'animal:mammals:dogs:static/dog.png:Dachschund:General household regions' + randint(1,56)+'_plant:flowers:static/panda.png:Birch Tree:Ireland<br>and other areas!' + randint(1,4)+'';
 			if(circle_data[circle].slice(-1) == '~'){
 				circle_data[circle] = circle_data[circle].slice(0,circle_data[circle].length-1);
-				showLoading = false;
 			} else{
 				showLoading = true;
 			}
@@ -427,7 +428,12 @@ function performRequest(){
 	hideDataIfNeeded();
 }
 
-
+function performRequestLoop(){
+	if(showLoading == true){
+		alert('Woo hoo!');
+	}
+	window.setTimeout(performRequestLoop,1000);
+}
 
 
 
@@ -446,3 +452,9 @@ function performRequest(){
 function randint(min,max){
 	return Math.floor((Math.random() * (max-min+1)) + min)
 }
+
+
+
+$(document).ready(function(){
+	window.setTimeout(performRequestLoop,1000);
+});
