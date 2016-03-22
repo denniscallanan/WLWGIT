@@ -175,6 +175,9 @@ body{
 	z-index:1051;
 
 	background:rgb(110,110,110);
+	background:black;
+	
+	opacity:0.9;
 
 	color:white;
 
