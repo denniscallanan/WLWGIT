@@ -430,9 +430,9 @@ function performRequest(){
 
 function performRequestLoop(){
 	if(showLoading == true){
-		alert('Woo hoo!');
+		info('Perform Request Loop!');
 	}
-	window.setTimeout(performRequestLoop,1000);
+	window.setTimeout(performRequestLoop,2650);
 }
 
 
@@ -456,5 +456,5 @@ function randint(min,max){
 
 
 $(document).ready(function(){
-	window.setTimeout(performRequestLoop,1000);
+	window.setTimeout(performRequestLoop,600);
 });
