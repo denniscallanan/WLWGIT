@@ -1,0 +1,48 @@
+*{
+	padding:0px;
+	margin:0px;
+	font-family:'sans-serif';
+}
+
+body{
+	background:#222;
+	padding-top:25px;
+	padding-left:25px;
+}
+
+input{
+	margin-top:15px;
+	
+	height:38px;
+	
+	width:600px;
+
+	padding-left:20px;
+
+	border:none;
+	border-radius:18px;
+
+	background:white;
+	color:black;
+
+	font-size:18px;
+	font-family:sans-serif;
+	font-weight:lighter;
+}
+
+input[type=submit]{
+	background:black;
+	color:white;
+	width:300px;
+	text-align:center;
+	border-radius:40px;
+}
+
+input[type=submit]:hover{
+	background:#111;
+}
+
+input[type=submit]:active{
+	background:#222;
+	outline:0;
+}
